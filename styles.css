@@ -56,9 +56,10 @@
     /* Litir */
     --color-gold: #ffe7ae;
     --color-gold-light: #fff1cf;
-    --color-dark: #2f1d05;
+    --color-dark: #291905;
     --color-white: #ffffff;
-    --color-brown: #291904;
+    --color-dark-brown: #4b2e08;
+    --color-light-brown: #814f0e;
     --color-light: #fff9ee;
   
     /* Grid stillingar */
@@ -235,28 +236,45 @@
   /** Fótur **/
   
   .footer {
-    padding: var(--footer-spacing) 0;
     width: 100%;
-  
-    background-color: var(--color-brown);
+    background-color: var(--color-dark-brown);
     color: var(--color-white);
   }
   
   .footer .content {
+    padding-top: var(--footer-spacing);
+    padding-bottom: var(--footer-spacing);
     display: flex;
+    /*
+    flex-wrap: wrap; 
     gap: var(--vertical-space);
-  
-    margin: 0 auto;
-  
-    text-align: center;
+    justify-content: center;
+    padding: 1em 0 1em 1em;
+    margin: 2em 0 1em;
+    */
+  }
+
+  .footer section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    width: 100%; /* MIGHT BE 30% ???? */
+    min-height: 100px; /* NOT USED ??? */
   }
 
   .footer h2 {
     margin-bottom: calc(var(--spacing) * 0.5);
     border-bottom: var(--border-small) solid var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .footer .disclaimer{
+    margin-bottom: rem;
+    flex: 1;
+    text-align: center;
   }
   
-  @media (min-width: 500px) {
+  /* @media (min-width: 500px) {
     .footer .content {
       grid-template-columns: repeat(var(--columns), 1fr);
       grid-template-rows: auto;
@@ -270,10 +288,13 @@
     .footer section:first-child {
       grid-column-start: 3;
     }
-  }
+  } */
   
   .footer ul {
     list-style: none;
+    /* flex: 1;
+    display: flex;
+    flex-direction: column; */
   }
   
   /* Box! */
