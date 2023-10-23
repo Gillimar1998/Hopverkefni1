@@ -49,7 +49,7 @@
     --width-offset: calc(100% - (2 * var(--offset)));
   
     /* Border breiddir */
-    --border-small: 1px;
+    --border-small: 2px;
     --border-large: 8px;
     --border-radius: 6px;
   
@@ -58,7 +58,7 @@
     --color-gold-light: #fff1cf;
     --color-dark: #291905;
     --color-white: #ffffff;
-    --color-dark-brown: #4b2e08;
+    --color-dark-brown: #392307;
     --color-light-brown: #814f0e;
     --color-light: #fff9ee;
   
@@ -181,22 +181,27 @@
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 100% auto;
-    margin: 0; /* Remove any default margin */
-    
+    margin: 0;
     display: flex;
     flex-direction: column;
-  
-    width: 100%;
-
+    width: 100vw;
   }
   
   .header header {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
     text-align: center;
     padding: var(--header-spacing) 0;
+  }
+
+  .header header h1 {
+    font-size: 6vmax;
+    font-weight: 400;
+  }
+
+  .header header p{
+    font-size: 1.5vmax;
   }
   
   /** Valmynd **/
@@ -214,10 +219,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--spacing);
-  
     width: 100%;
     max-width: var(--width-offset);
-  
     list-style: none;
   }
   
@@ -228,7 +231,6 @@
     grid-template-rows: auto;
     grid-template-columns: 100%;
     gap: var(--vertical-space);
-  
     width: var(--width-offset);
     max-width: var(--max-width);
   }
@@ -243,14 +245,10 @@
   
   .footer .content {
     padding-top: var(--footer-spacing);
-    padding-bottom: var(--footer-spacing);
+    padding-bottom: var(--spacing);
     display: flex;
     /*
     flex-wrap: wrap; 
-    gap: var(--vertical-space);
-    justify-content: center;
-    padding: 1em 0 1em 1em;
-    margin: 2em 0 1em;
     */
   }
 
@@ -268,8 +266,14 @@
     margin-bottom: 1rem;
   }
 
-  .footer .disclaimer{
-    margin-bottom: rem;
+  .footer .disclaimer {
+    border-top: var(--border-small) solid var(--color-light-brown);
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .footer .disclaimer p{
+    padding: 1rem;
     flex: 1;
     text-align: center;
   }
