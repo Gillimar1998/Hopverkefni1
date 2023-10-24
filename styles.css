@@ -245,6 +245,10 @@
     max-width: var(--width-offset);
     list-style: none;
   }
+
+  /* .navigation ul li:first-child {
+    margin-right: auto;
+  } */
   
   /** Meginmál **/
   
