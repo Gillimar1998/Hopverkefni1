@@ -111,25 +111,6 @@ img {
   width: 1px;
 }
 
-/**************************** SMALL WINDOW ****************************/
-@media screen and (max-width: 899px) {
-
-  /** Fótur **/
-  
-  .footer .content {
-    padding-top: var(--footer-spacing);
-    padding-bottom: var(--spacing);
-    display: flex;
-    flex-wrap: wrap; 
-  }
-
-  .footer .disclaimer {
-    border-top: var(--border-small) solid var(--color-light-brown);
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
-  
 /* Takki */
 
 /* .button {
@@ -228,45 +209,60 @@ img {
 
 .navigation {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: var(--spacing);
   width: 100%;
-}
-
-.navigation .cog-image {
-  justify-content: left;
-  background-image: url('Myndir/cog.png');
-  width: 30px !important;
-  height: 30px !important;
-  background-size: contain;
+  padding: 0.5em;
 }
 
 .navigation ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: var(--spacing);
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
+  white-space: nowrap;
   width: 100%;
+  padding-left: 10%;
+  padding-right: 5%;
   max-width: var(--width-offset);
   list-style: none;
 }
 
-.navigation .taeknibudin {
-  /* margin-right: auto; */
-  font-size: 1.8em;
-  padding-left: 0.3em;
-  list-style: none;
+.navigation .cog-image {
+  background-image: url('Myndir/cog.png');
+  background-repeat: no-repeat;
+  width: 40px !important;
+  height: 40px !important;
+  background-size: contain;
 }
 
 .navigation .cart-image {
-  justify-content: right;
   background-image: url('Myndir/cart.png');
-  width: 30px !important;
-  height: 30px !important;
+  background-repeat: no-repeat;
+  width: 40px !important;
+  height: 40px !important;
   background-size: contain;
+  margin-right: 0;
+}
+
+.navigation ul a {
+  text-decoration: none;
+}
+
+.navigation .taeknibudin {
+  margin-right: auto;
+  font-size: 2em;
+  margin-left: 0.3em;
+  list-style: none;
+}
+
+.taeknibudin a {
+  text-decoration: none !important;
+}
+
+input {
+  height: 2.2em;
+  width: 50%;
+  box-sizing: border-box;
 }
 
 /** Meginmál **/
@@ -288,7 +284,26 @@ img {
   color: var(--color-white);
 }
 
+/* SMALL SCREEN FOOTER */
+@media screen and (max-width: 899px) {
+  
+  .footer .content {
+    padding-top: var(--footer-spacing);
+    padding-bottom: var(--spacing);
+    display: flex;
+    flex-wrap: wrap; 
+  }
+
+  .footer .disclaimer {
+    border-top: var(--border-small) solid var(--color-light-brown);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* LARGE SCREEN FOOTER */
 @media screen and (min-width: 900px) {
+  
   .footer .content {
     padding-top: var(--footer-spacing);
     padding-bottom: var(--spacing);
