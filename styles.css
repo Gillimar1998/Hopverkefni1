@@ -1,0 +1,1081 @@
+/**************************** SETTINGS FOR LARGE AND SMALL WINDOW ****************************/
+/* Reset og border-box á allt */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Leturgerðir */
+
+@font-face {
+  font-display: swap;
+  font-family: 'lato';
+  font-style: italic;
+  src: url('font/Lato-Regular.ttf') format('woff');
+}
+
+/* Stillingar */
+
+:root {
+  /* Grunn bilið okkar er 1rem == 16px */
+  --font-base-body-px: 16px;
+  --spacing: 1rem;
+
+  /* Bil á milli header*/
+  --header-spacing: calc(var(--spacing) * 13);
+  --footer-spacing: calc(var(--spacing) * 5);
+
+  /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
+  --vertical-space: calc(var(--gutter));
+
+  /* Hámarksbreidd á efni */
+  --max-width: 1440px;
+  --width-offset: calc(100% - (2 * var(--offset)));
+
+  /* Border breiddir */
+  --border-small: 2px;
+  --border-large: 8px;
+  --border-radius: 6px;
+
+  /* Litir */
+  --color-gold: #ffe7ae;
+  --color-gold-light: #fff1cf;
+  --color-dark: #291905;
+  --color-white: #ffffff;
+  --color-dark-brown: #392307;
+  --color-light-brown: #814f0e;
+  --color-light: #fff9ee;
+  --color-coffee: #E1CEC2;
+
+  /* Grid stillingar */
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  --font-family-base: "Lato", sans-serif;
+  --font-family-heading: "Lato", sans-serif;
+
+  /* Transitions */
+  --transition-time-short: 300ms;
+  --transition-time-long: 600ms;
+  --transition-timing-function: ease-in-out;
+}
+
+/* Almennt */
+
+html,
+input,
+select,
+button {
+  font-size: var(--font-base-body-px);
+  font-family: var(--font-family-base);
+}
+
+h1,
+h2,
+h3 {
+  /* Setjum almennt bil á eftir fyrirsögnum */
+  margin-bottom: var(--spacing);
+
+  font-family: var(--font-family-heading);
+}
+
+a {
+  color: inherit;
+  background-color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/** Hjálpar class sem felur sjónrænt en skjálesarar lesa **/
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Takki */
+
+/* .button {
+  display: inline-block;
+
+  border: 1px solid var(--color-dark);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing) / 2) calc(var(--spacing));
+
+  font-family: var(--font-family-base);
+  text-decoration: none;
+  text-align: center;
+
+  color: var(--color-light);
+  background-color: var(--color-dark);
+
+  transition: background-color var(--transition-time-short)
+      var(--transition-timing-function),
+    color var(--transition-time-short);
+}
+
+.button:hover {
+  color: var(--color-dark);
+  background-color: var(--color-gold);
+} */
+
+/* Fade in animation */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.header,
+.main {
+  animation: var(--transition-time-long) var(--transition-timing-function) fade-in;
+}
+
+
+/* Layout */
+
+/* .wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  justify-items: center;
+
+  gap: var(--vertical-space);
+} */
+
+/** Haus **/
+
+.header {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.header-image {
+  background-image: url('Myndir/Background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.header-image-opacity {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+}
+
+.header header {
+  display: flex;
+  flex-direction: column;
+  
+  text-align: center;
+  padding: var(--header-spacing) 0;
+}
+
+.header header h1 {
+  font-size: 9em;
+  font-weight: 400;
+}
+
+.header header p{
+  font-size: 2.5em;
+}
+
+/** Valmynd **/
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.navigation .nav-ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  white-space: nowrap;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 5%;
+  max-width: var(--width-offset);
+  list-style: none;
+}
+
+.navigation .cog-image {
+  background-image: url('Myndir/cog.png');
+  background-repeat: no-repeat;
+  width: 40px !important;
+  height: 40px !important;
+  background-size: contain;
+}
+
+
+.navigation .cart-image {
+  background-image: url('Myndir/cart.png');
+  background-repeat: no-repeat;
+  width: 40px !important;
+  height: 40px !important;
+  background-size: contain;
+  margin-right: 0;
+}
+
+.navigation ul a {
+  text-decoration: none;
+}
+
+.navigation .taeknibudin {
+  margin-right: auto;
+  font-size: 2em;
+  margin-left: 0.3em;
+  list-style: none;
+}
+
+.taeknibudin a {
+  text-decoration: none !important;
+}
+
+
+header .menu{
+  background-color: #fff;
+  left: 0;
+  margin-top: 0.8em;
+  position: absolute;
+  right: 0;
+  width: 100vw;
+  
+}
+.menu-ul{
+  font-size: 60px;
+  line-height: 110px;
+  list-style: none;
+  text-align: center;
+  
+}
+
+@media screen and (min-width: 801px){
+input {
+  height: 2em;
+  width: 40%;
+
+}
+details > summary {
+  display: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+}
+@media screen and (max-width: 800px){
+  details > summary {
+    background: url('Myndir/Vector.png') center no-repeat;
+  }
+  
+  details > summary::-webkit-details-marker {
+    background: url('Myndir/Vector.png') center no-repeat;
+    display: none;
+  }
+  details > summary::marker {
+    background: url('Myndir/Vector.png') center no-repeat;
+    display: none;
+  }
+  .navigation .nav-ul input {
+    display: none;
+  }
+  .navigation .nav-ul a{
+    display: none;
+  }
+  .navigation .menu input{
+    height: 2em;
+    width: 80%;
+
+  }
+  .navigation .header-details {
+    background-image: url('Myndir/Vector.png');
+    background-repeat: no-repeat;
+    width: 40px !important;
+    height: 40px !important;
+    background-size: contain;
+  }
+  }
+
+/* Small screen Nav og header*/
+
+
+/** Meginmál **/
+/*
+.main {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  gap: var(--vertical-space);
+  width: 100%;
+}*/
+
+/** Fótur **/
+
+.footer {
+  
+  width: 100%;
+  background-color: var(--color-dark-brown);
+  color: var(--color-white);
+ 
+  
+}
+
+/* SMALL SCREEN FOOTER */
+@media screen and (max-width: 899px) {
+  
+  .footer .content {
+    padding-top: var(--footer-spacing);
+    padding-bottom: var(--spacing);
+    display: flex;
+    flex-wrap: wrap; 
+  }
+
+  .footer .disclaimer {
+    border-top: var(--border-small) solid var(--color-light-brown);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* LARGE SCREEN FOOTER */
+@media screen and (min-width: 900px) {
+  
+  .footer .content {
+    padding-top: var(--footer-spacing);
+    padding-bottom: var(--spacing);
+    display: flex;
+  }
+
+  .footer .disclaimer {
+    border-top: var(--border-small) solid var(--color-light-brown);
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.footer section {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  width: 100%; /* MIGHT BE 30% ??? PROBABLY NOT USED BECAUSE OF FLEX ??? */
+  min-height: 100px; /* NOT USED ??? */
+}
+
+.footer h2 {
+  margin-bottom: calc(var(--spacing) * 0.5);
+  border-bottom: var(--border-small) solid var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.footer .disclaimer p{
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+/* EKKI NOTA, BARA TIL HLIÐSJÓNAR ??? */
+/* @media (min-width: 500px) {
+  .footer .content {
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: auto;
+    max-width: var(--max-width);
+  }
+
+  .footer section {
+    grid-column-end: span 4;
+  }
+
+  .footer section:first-child {
+    grid-column-start: 3;
+  }
+} */
+
+
+/* Box! */
+
+.box-grid{
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: repeat(var(--columns), 1fr);
+  margin: 2em auto;
+  max-width: var(--max-width);
+  width: var(--width-offset);
+
+}
+.deal{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 4em 0 7em;
+}
+.deal h1{
+  font-size: 4em;
+}
+.deal h2{
+  font-size: 2em;
+  font-weight: 400;
+}
+.content-new {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/13;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.content-new .button-href {
+  align-items: center;
+  align-self: center;
+  background-color: #6f4e37;
+  border: 1px solid #3c2a1e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  padding: 10px 15px;
+}
+.content-new .button-href > a {
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+}
+.content-img-new {
+  grid-column: 1/13;
+  margin-bottom: 1em;
+  width: 100%;
+}
+.title{
+  font-size: 2em;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.content-all {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/13;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.content-all .button-href {
+  align-items: center;
+  align-self: center;
+  background-color: #6f4e37;
+  border: 1px solid #3c2a1e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  padding: 10px 15px;
+}
+.content-all .button-href > a {
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+}
+.content-img-all {
+  grid-column: 1/13;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.products{
+  background-color: var(--color-coffee);
+}
+
+.products-grid{
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: repeat(var(--columns), 1fr);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding-bottom: 2em;
+  width: var(--width-offset);
+}
+
+.products .title{
+  font-size: 2em;
+  grid-column: 1/13;
+  margin: 1rem 0;
+}
+
+.products .card{
+  grid-column: 1/13;
+}
+
+
+/* media */
+@media (min-width: 700px) and (max-width:1199px){
+  .products .card {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 900px) and (max-width:1199px) {
+  .content-new {
+    grid-column: span 6;
+  }
+  .content-all {
+    grid-column: span 6;
+  }
+
+  .content-img-new {
+    grid-column: span 6;
+  }
+  .content-img-all {
+    grid-column: span 6;
+  }
+}
+@media (min-width: 1200px) {
+  
+  .deal {
+    padding: 7em 0;
+  }
+  .deal h1 {
+    font-size: 10em;
+  }
+
+  
+  .triangle-header {
+    border-color: transparent transparent white;
+    border-style: solid;
+    border-width: 0 0 50px 100vw;
+    height: 0;
+    width: 0;
+  }
+ 
+  .box-grid {
+    margin: 6em 0;
+  }
+
+  .content-new{
+    justify-content: normal;
+    grid-column: 3/7;
+  }
+  .content-img-all {
+    height: 17rem;
+    object-fit: cover;
+    width: 100%;
+    grid-column: 3/7;
+  }
+  .content-all{
+    justify-content: normal;
+    grid-column: 7/11;
+  }
+
+  .content-img-new {
+    height: 17rem;
+    object-fit: cover;
+    width: 100%;
+    grid-column: 7/11;
+  }
+  
+
+  .button-href {
+    align-self: baseline !important;
+  }
+
+
+  .triangle-top {
+    border-color: transparent transparent var(--color-coffee);
+    border-style: solid;
+    border-width: 0 0 50px 100vw;
+    height: 0;
+    width: 0;
+  }
+
+  .triangle-bot {
+    border-color: var(--color-coffee) transparent transparent ;
+    border-style: solid;
+    border-width: 50px 100vw 0 0;
+    height: 0;
+    width: 0;
+  }
+
+  .products {
+    padding-bottom: 4em;
+  }
+  .products .title {
+    grid-column: 3/13;
+  }
+  .products .card {
+    grid-column: span 3;
+  }
+  
+  .triangle-footer {
+    border-color: transparent transparent var(--color-dark-brown);
+    border-style: solid;
+    border-width: 0 0 50px 100vw;
+    height: 0;
+    margin-top: -50px;
+    width: 0;
+  }
+}
+
+.card3 {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+}
+.card3 img {
+  height: 14em;
+  object-fit: cover;
+  width: 100%;
+}
+.card3 .product-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+/*order*/
+.main h1 {
+  font-size: 60px;
+  padding-left: 0.4em;
+}
+
+.main input {
+  border-radius: 5px;
+  height: 40px;
+}
+
+.main label {
+  font-size: 44px;
+}
+.main p{
+  font-size: 24px;
+}
+
+.main h3 {
+  font-size: 32px;
+}
+
+.forms h3 {
+  margin: 1em;
+  margin-left: 0.5em;
+}
+
+.pontun--pantadar-vorur img {
+  height: 127px;
+}
+
+.main button {
+  background-color: #6F4E37;
+  border: 1px solid #3C2A1E;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 20px;
+  height: 52px;
+  margin: 2em;
+  width: 186px;
+}
+
+.main .samtals {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.main .fyrsta-vara,
+.onnur-vara {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 802px) {
+  .main .kaupandi,
+.afhending {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    width: 100%;
+  }
+
+  .main .buyer-element {
+    margin-top: 1em;
+  }
+}
+@media screen and (min-width: 803px) {
+  .main .pontun {
+    display: flex;
+    width: 100%;
+  }
+
+  .forms {
+    width: 50%;
+  }
+
+  .pontun--pantadar-vorur {
+    margin-top: 3em;
+    width: 50%;
+  }
+
+  .main .kaupandi,
+.afhending {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1em;
+  }
+
+  .main .buyer-element,
+.delivery-element {
+    width: 50%;
+  }
+
+  .forms input {
+    margin-bottom: 1em;
+    width: 80%;
+  }
+
+  .main .samtals {
+    margin-left: 0;
+    margin-right: 1em;
+  }
+
+  .main .fyrsta-vara,
+.onnur-vara {
+    margin-left: 0;
+    margin-right: 1em;
+  }
+}
+/*  VÖRULISTI CHANGES */
+.list-tags .tags {
+  margin-left: 1rem;
+}
+
+.tags {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0;
+}
+
+.tags p {
+  background-color: #e1cec2;
+  border-radius: 5px;
+  flex: none;
+  flex-grow: 0;
+  margin: 0 10px 0 0;
+  padding: 5px;
+}
+
+.nyjar h1 {
+  font-size: 60px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 80px;
+  margin-left: 1rem;
+}
+
+.rada h3 {
+  margin-left: 1rem;
+}
+
+.vorur-sida {
+  background-color: #e1cec2;
+  width: 100%;
+}
+
+.vorur-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 auto;
+  padding: 2em 0;
+  width: calc(100% - (2 * 20px));
+}
+.vorur-grid .vorur-grid-card {
+  grid-column: span 12;
+}
+
+@media (min-width: 700px) {
+  .vorur-grid .vorur-grid-card {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .vorur {
+    margin-top: 2em;
+  }
+  .vorur-grid{
+    margin-top: 2em;
+  }
+
+  .vorur-grid .vorur-grid-card {
+    grid-column: span 3;
+  }
+
+  .card img {
+    height: 10em;
+  }
+
+  .card .card-text {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 1em;
+  }
+}
+/*vara*/
+@media (min-width: 1200px) {
+  .detail-picture {
+    grid-column: span 6;
+  }
+
+  .vara-detail {
+    grid-column: span 6;
+  }
+  .vara-detail .verd {
+    font-size: 20px;
+    margin-top: 0.8em;
+  }
+
+  .content-text {
+    font-size: 1.25em;
+  }
+
+  .vara-eiginleikar {
+    grid-column: 3/11;
+    margin-top: 5em;
+  }
+/*laga*/
+  .product-site {
+    margin-top: 2em;
+  }
+/* laga*/
+  .product-site-grid .card-grid1 {
+    grid-column: span 3;
+  }
+
+  .card2 img {
+    height: 10em;
+  }
+  .card3 img {
+    height: 10em;
+  }
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+.verd {
+  font-weight: 700;
+}
+.kaupa {
+  align-items: center;
+  border: 1px solid #6f4e37;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  padding: 10px 15px;
+}
+.kaupa a {
+  color: #3c2a1e;
+  font-weight: 700;
+}
+.content-text {
+  line-height: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 4em auto 0;
+  max-width: 1440px;
+  width: calc(100% - (2 * 20px));
+}
+
+.detail-picture {
+  grid-column: 1/13;
+  width: 100%;
+}
+
+.vara-detail {
+  grid-column: 1/13;
+}
+.vara-detail .price-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.vara-detail .content-text {
+  margin-top: 2em;
+}
+.vara-detail .verd {
+  margin-top: 1em;
+}
+.vara-detail .kaupa {
+  margin-top: 7px;
+}
+.vara-detail a {
+  padding: 0 7em;
+}
+.vara-detail h1 {
+  font-weight: normal;
+}
+
+.vara-eiginleikar {
+  grid-column: 1/13;
+}
+.vara-eiginleikar .properties-header1 {
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+.vara-eiginleikar h2 {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+.vara-eiginleikar .content-text {
+  margin-bottom: 2em;
+}
+
+.tags {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0;
+}
+.tags p {
+  background-color: var(--color-coffee);
+  border-radius: 5px;
+  flex: none;
+  flex-grow: 0;
+  margin: 0 10px 0 0;
+  padding: 5px;
+}
+
+.tengdar-vorur {
+  background-color: var(--color-coffee);
+  width: 100%;
+}
+
+.tengdar-vorur-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 auto;
+  padding-bottom: 2em;
+  width: calc(100% - (2 * 20px));
+}
+.tengdar-vorur-grid h2 {
+  font-size: 2em;
+  font-weight: normal;
+  grid-column: span 12;
+  margin: 1em 0 auto;
+}
+.tengdar-vorur-grid .card-grid1 {
+  grid-column: span 12;
+}
+
+.card2 {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+}
+.card2 img {
+  height: 14em;
+  object-fit: cover;
+  width: 100%;
+}
+.card2 .product-header {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 1em;
+}
+@media (min-width: 700px) {
+  .tengdar-vorur-grid .card-grid1 {
+    grid-column: span 6;
+  }
+
+  .vara-detail h1 {
+    font-size: 4em;
+  }
+}
+@media (min-width: 1200px) {
+  .detail-picture {
+    grid-column: span 6;
+  }
+
+  .vara-detail {
+    grid-column: span 6;
+  }
+  .vara-detail .verd {
+    font-size: 20px;
+    margin-top: 0.8em;
+  }
+
+  .content-text {
+    font-size: 1.25em;
+  }
+
+  .vara-eiginleikar {
+    grid-column: 3/11;
+    margin-top: 5em;
+  }
+
+  .tengdar-vorur {
+    margin-top: 2em;
+  }
+
+  .tengdar-vorur-grid .card-grid1 {
+    grid-column: span 3;
+  }
+
+  .card2 img {
+    height: 10em;
+  }
+}
