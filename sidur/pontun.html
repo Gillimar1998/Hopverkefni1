@@ -10,106 +10,108 @@
   <meta property="og:title" content="Tæknibúðin Vörusíða">
   <meta property="og:description" content="Velkomin í Tæknibúðina!">
   <meta property="og:image" content="./myndir/sharing.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="header">
-        <nav class="navigation">
-            <ul>
-                <li><strong>Tæknibúðin</strong></li>
-                <li><input type="text" placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl."></li>
-                <li><a href="../index.html">Nýjar Vörur</a></li>
-                <li><a href="vara.html">Tilboðs vörur</a></li>
-                <li><a href="vorulisti.html">Allar Vörur</a></li>
-                <li><a href="pontun.html">cart</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Pöntun</h1>
-        </header>
-    </div>
-    <main class="main">
-        <section class="pontun">
-            <div class="forms">
-                <div class="form">
-                    <H2>Kaupandi</H2>
-                    <div>
-                        <label for="name">Nafn</label>
-                        <input id="name" type="text" required>
+        <div class="header">
+            <header>
+                <nav class="navigation">
+                    <div class="cog-image"></div>
+                    <div class="taeknibudin"><a href="../index.html"><strong>Tæknibúðin</strong></a></div>
+                    <ul class="nav-ul">
+                        <input type="text" placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl.">
+                        <a href="../index.html">Nýjar Vörur</a>
+                        <a href="vara.html">Tilboðs vörur</a>
+                        <a href="vorulisti.html">Allar Vörur</a>
+                    </ul>
+                    <div class="cart-image" href="sidur/pontun.html"></div>
+                </nav>
+            </header>
+        </div>
+        <main class="main">
+            <section class="pontun">
+                <div class="forms">
+                    <h1>Pöntun</h1>
+                    <div class="form">
+                        <H2>Kaupandi</H2>
+                        <div>
+                            <label for="name">Nafn</label>
+                            <input id="name" type="text" required>
+                        </div>
+                        <div>
+                            <label for="id">Kennitala</label>
+                            <input id="id" type="text" required>
+                        </div>
+                        <div>
+                            <label for="email">Netfang</label>
+                            <input id="email" name="email" type="email" required>
+                        </div>
+                        <div>
+                            <label for="tel">Sími</label>
+                            <input id="tel" type="tel" required>
+                        </div>
                     </div>
-                    <div>
-                        <label for="id">Kennitala</label>
-                        <input id="id" type="text" required>
-                    </div>
-                    <div>
-                        <label for="email">Netfang</label>
-                        <input id="email" name="email" type="email" required>
-                    </div>
-                    <div>
-                        <label for="tel">Sími</label>
-                        <input id="tel" type="tel" required>
+                    <div class="form">
+                        <H2>Afending</H2>
+                        <div>
+                            <label for="address">Heimilisfang</label>
+                            <input id="address" type="text" required>
+                        </div>
+                        <div>
+                            <label for="postcode">Póstnúmer</label>
+                            <input id="postcode" type="number" required>
+                        </div>
+                        <div>
+                            <label for="place">Staður</label>
+                            <input id="place"  type="text" required>
+                        </div>
+                        <div>
+                            <label for="info">Athugasemd</label>
+                            <input id="info" type="text" >
+                        </div>
                     </div>
                 </div>
-                <div class="form">
-                    <H2>Afending</H2>
-                    <div>
-                        <label for="address">Heimilisfang</label>
-                        <input id="address" type="text" required>
-                    </div>
-                    <div>
-                        <label for="postcode">Póstnúmer</label>
-                        <input id="postcode" type="number" required>
-                    </div>
-                    <div>
-                        <label for="place">Staður</label>
-                        <input id="place"  type="text" required>
-                    </div>
-                    <div>
-                        <label for="info">Athugasemd</label>
-                        <input id="info" type="text" >
-                    </div>
+                <div class="karfa">
+
                 </div>
-            </div>
-            <div class="karfa">
 
-            </div>
-
-        </section>
-        <section class="panta">
-            <button>SENDA PÖNTUN</button>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class = "content">
-            <section>
-            <h2>OPNUNARTÍMI</h2>
-            <ul>
-                <li>Opið alla virka daga frá 9:00-18:00</li>
-                <li>Opið á laugardögum frá 12:00-16:00</li>
-                <li>Lokað á sunnudögum</li>
-            </ul>
             </section>
-            <section>
-            <h2>HAFÐU SAMBAND</h2>
-            <ul>
-                <li>Skiptiborð: 234-4568</li>
-                <li>Tölvupóstur: thjonusta@example.org</li>
-            </ul>
+            <section class="panta">
+                <button>SENDA PÖNTUN</button>
             </section>
-            <section>
-                <h2>ANNAÐ</h2>
+        </main>
+
+        <footer class="footer">
+            <div class = "content">
+                <section>
+                <h2>OPNUNARTÍMI</h2>
                 <ul>
-                <li>Rekja sendingu</li>
-                <li>Skilaréttur</li>
-                <li>Um okkur</li>
-                <li>Störf</li>
+                    <li>Opið alla virka daga frá 9:00-18:00</li>
+                    <li>Opið á laugardögum frá 12:00-16:00</li>
+                    <li>Lokað á sunnudögum</li>
                 </ul>
-            </section>
-        </div>
-        
-        <div class="disclaimer">
-            <P>© 2021 TÆKNIBÚÐIN - Allur réttur áskilinn</P>
-        </div>
-    </footer>
+                </section>
+                <section>
+                <h2>HAFÐU SAMBAND</h2>
+                <ul>
+                    <li>Skiptiborð: 234-4568</li>
+                    <li>Tölvupóstur: thjonusta@example.org</li>
+                </ul>
+                </section>
+                <section>
+                    <h2>ANNAÐ</h2>
+                    <ul>
+                    <li>Rekja sendingu</li>
+                    <li>Skilaréttur</li>
+                    <li>Um okkur</li>
+                    <li>Störf</li>
+                    </ul>
+                </section>
+            </div>
+            
+            <div class="disclaimer">
+                <P>© 2021 TÆKNIBÚÐIN - Allur réttur áskilinn</P>
+            </div>
+        </footer>
 </body>
 </html>
