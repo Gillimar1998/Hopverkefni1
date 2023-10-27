@@ -833,3 +833,219 @@ details > summary::-webkit-details-marker {
     margin-top: 1em;
   }
 }
+/*vara*/
+@media (min-width: 1200px) {
+  .detail-picture {
+    grid-column: span 6;
+  }
+
+  .vara-detail {
+    grid-column: span 6;
+  }
+  .vara-detail .verd {
+    font-size: 20px;
+    margin-top: 0.8em;
+  }
+
+  .content-text {
+    font-size: 1.25em;
+  }
+
+  .vara-eiginleikar {
+    grid-column: 3/11;
+    margin-top: 5em;
+  }
+/*laga*/
+  .product-site {
+    margin-top: 2em;
+  }
+/* laga*/
+  .product-site-grid .card-grid1 {
+    grid-column: span 3;
+  }
+
+  .card2 img {
+    height: 10em;
+  }
+  .card3 img {
+    height: 10em;
+  }
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+.verd {
+  font-weight: 700;
+}
+.kaupa {
+  align-items: center;
+  border: 1px solid #6f4e37;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  padding: 10px 15px;
+}
+.kaupa a {
+  color: #3c2a1e;
+  font-weight: 700;
+}
+.content-text {
+  line-height: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 4em auto 0;
+  max-width: 1440px;
+  width: calc(100% - (2 * 20px));
+}
+
+.detail-picture {
+  grid-column: 1/13;
+  width: 100%;
+}
+
+.vara-detail {
+  grid-column: 1/13;
+}
+.vara-detail .price-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.vara-detail .content-text {
+  margin-top: 2em;
+}
+.vara-detail .verd {
+  margin-top: 1em;
+}
+.vara-detail .kaupa {
+  margin-top: 7px;
+}
+.vara-detail a {
+  padding: 0 7em;
+}
+.vara-detail h1 {
+  font-weight: normal;
+}
+
+.vara-eiginleikar {
+  grid-column: 1/13;
+}
+.vara-eiginleikar .properties-header1 {
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+.vara-eiginleikar h2 {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+.vara-eiginleikar .content-text {
+  margin-bottom: 2em;
+}
+
+.tags {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0;
+}
+.tags p {
+  background-color: var(--color-coffee);
+  border-radius: 5px;
+  flex: none;
+  flex-grow: 0;
+  margin: 0 10px 0 0;
+  padding: 5px;
+}
+
+.tengdar-vorur {
+  background-color: var(--color-coffee);
+  width: 100%;
+}
+
+.tengdar-vorur-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 auto;
+  padding-bottom: 2em;
+  width: calc(100% - (2 * 20px));
+}
+.tengdar-vorur-grid h2 {
+  font-size: 2em;
+  font-weight: normal;
+  grid-column: span 12;
+  margin: 1em 0 auto;
+}
+.tengdar-vorur-grid .card-grid1 {
+  grid-column: span 12;
+}
+
+.card2 {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+}
+.card2 img {
+  height: 14em;
+  object-fit: cover;
+  width: 100%;
+}
+.card2 .product-header {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 1em;
+}
+@media (min-width: 700px) {
+  .tengdar-vorur-grid .card-grid1 {
+    grid-column: span 6;
+  }
+
+  .vara-detail h1 {
+    font-size: 4em;
+  }
+}
+@media (min-width: 1200px) {
+  .detail-picture {
+    grid-column: span 6;
+  }
+
+  .vara-detail {
+    grid-column: span 6;
+  }
+  .vara-detail .verd {
+    font-size: 20px;
+    margin-top: 0.8em;
+  }
+
+  .content-text {
+    font-size: 1.25em;
+  }
+
+  .vara-eiginleikar {
+    grid-column: 3/11;
+    margin-top: 5em;
+  }
+
+  .tengdar-vorur {
+    margin-top: 2em;
+  }
+
+  .tengdar-vorur-grid .card-grid1 {
+    grid-column: span 3;
+  }
+
+  .card2 img {
+    height: 10em;
+  }
+}
