@@ -754,3 +754,82 @@ details > summary::-webkit-details-marker {
     margin-right: 1em;
   }
 }
+/*  VÖRULISTI CHANGES */
+.list-tags .tags {
+  margin-left: 1rem;
+}
+
+.tags {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0;
+}
+
+.tags p {
+  background-color: #e1cec2;
+  border-radius: 5px;
+  flex: none;
+  flex-grow: 0;
+  margin: 0 10px 0 0;
+  padding: 5px;
+}
+
+.nyjar h1 {
+  font-size: 60px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 80px;
+  margin-left: 1rem;
+}
+
+.rada h3 {
+  margin-left: 1rem;
+}
+
+.vorur-sida {
+  background-color: #e1cec2;
+  width: 100%;
+}
+
+.vorur-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 auto;
+  padding: 2em 0;
+  width: calc(100% - (2 * 20px));
+}
+.vorur-grid .vorur-grid-card {
+  grid-column: span 12;
+}
+
+@media (min-width: 700px) {
+  .vorur-grid .vorur-grid-card {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .vorur {
+    margin-top: 2em;
+  }
+  .vorur-grid{
+    margin-top: 2em;
+  }
+
+  .vorur-grid .vorur-grid-card {
+    grid-column: span 3;
+  }
+
+  .card img {
+    height: 10em;
+  }
+
+  .card .card-text {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 1em;
+  }
+}
