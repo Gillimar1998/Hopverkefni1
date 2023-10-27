@@ -280,7 +280,7 @@ header .menu{
   
 }
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 801px){
 input {
   height: 2em;
   width: 40%;
@@ -295,7 +295,7 @@ details > summary::-webkit-details-marker {
 }
 
 }
-@media screen and (max-width: 899px){
+@media screen and (max-width: 800px){
   details > summary {
     background: url('Myndir/Vector.png') center no-repeat;
   }
@@ -329,6 +329,17 @@ details > summary::-webkit-details-marker {
   }
 
 /* Small screen Nav og header*/
+
+
+/** Meginmál **/
+/*
+.main {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  gap: var(--vertical-space);
+  width: 100%;
+}*/
 
 /** Fótur **/
 
@@ -397,6 +408,24 @@ details > summary::-webkit-details-marker {
 .footer ul {
   list-style: none;
 }
+
+/* EKKI NOTA, BARA TIL HLIÐSJÓNAR ??? */
+/* @media (min-width: 500px) {
+  .footer .content {
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: auto;
+    max-width: var(--max-width);
+  }
+
+  .footer section {
+    grid-column-end: span 4;
+  }
+
+  .footer section:first-child {
+    grid-column-start: 3;
+  }
+} */
+
 
 /* Box! */
 
@@ -637,6 +666,7 @@ details > summary::-webkit-details-marker {
   font-weight: 400;
   margin-top: 1em;
 }
+
 /*order*/
 .main h1 {
   font-size: 60px;
@@ -843,7 +873,7 @@ details > summary::-webkit-details-marker {
     grid-column: span 6;
   }
   .vara-detail .verd {
-    font-size: 20px;
+    font-size: 10px;
     margin-top: 0.8em;
   }
 
@@ -876,7 +906,7 @@ a {
   text-decoration: none;
 }
 .verd {
-  font-weight: 700;
+  font-weight: 600;
 }
 .kaupa {
   align-items: center;
@@ -1024,7 +1054,7 @@ a {
     grid-column: span 6;
   }
   .vara-detail .verd {
-    font-size: 20px;
+    font-size: 10px;
     margin-top: 0.8em;
   }
 
